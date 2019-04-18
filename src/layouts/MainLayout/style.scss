@@ -1,0 +1,29 @@
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, .2);
+  margin: 16px;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+Header h1 {
+  text-align: center;
+  font-size: 36px;
+}
+
+.headLine {
+  height: 32px;
+  margin: 10px 0 -20px 0;
+  padding: 0 24px;
+}
+
+.currentRoute {
+  float: left;
+}
+
+.freshData {
+  float: right;
+}
