@@ -11,9 +11,15 @@ const {
 
 class MainLayout extends Component {
 
-    static freshData = () => function () {
+    state = {
+        error: false,
+    };
+
+    freshData = () => function () {
+        this.setState({error: true});
         console.log('666');
     };
+
 
     render() {
         return (
@@ -38,20 +44,25 @@ class MainLayout extends Component {
                             <Icon type="bars"/>
                             <span className="nav-text">今日打卡</span>
                         </Menu.Item>
-                        <Menu.Item key="/user">
-                            <Link to={{pathname: '/user'}}/>
+                        <Menu.Item key="/rank">
+                            <Link to={{pathname: '/rank'}}/>
                             <Icon type="profile"/>
                             <span className="nav-text">打卡排行</span>
                         </Menu.Item>
+                        <Menu.Item key="/user">
+                            <Link to={{pathname: '/user'}}/>
+                            <Icon type="save"/>
+                            <span className="nav-text">打卡日志</span>
+                        </Menu.Item>
                         <Menu.Item key="/live">
                             <Link to={{pathname: '/live'}}/>
-                            <Icon type="profile"/>
+                            <Icon type="star"/>
                             <span className="nav-text">直播间</span>
                         </Menu.Item>
-                        <Menu.Item key="/test">
-                            <Link to={{pathname: '/test'}}/>
-                            <Icon type="video-camera"/>
-                            <span className="nav-text">Test</span>
+                        <Menu.Item key="/about">
+                            <Link to={{pathname: '/about'}}/>
+                            <Icon type="info-circle"/>
+                            <span className="nav-text">关于</span>
                         </Menu.Item>
                     </Menu>
                 </Sider>
@@ -62,8 +73,12 @@ class MainLayout extends Component {
                     <div className="headLine">
                         <div className="currentRoute">path:{this.props.location.pathname}</div>
                         <div className="freshData">
-                            <Button className="freshButton" type="primary"
-                                    onClick={MainLayout.freshData()}>更新数据</Button>
+                            <Button
+                                className="freshButton"
+                                type="primary"
+                                onClick={this.freshData}>
+                                更新数据
+                            </Button>
                         </div>
                     </div>
                     <Content style={{margin: '24px 16px 0'}}>

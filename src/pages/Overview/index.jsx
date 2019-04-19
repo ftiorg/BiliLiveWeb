@@ -5,24 +5,27 @@ import {Row, Col, Button, Spin} from 'antd';
 import './style.scss';
 import axios from 'axios';
 import DataSet from '@antv/data-set';
+import config from '../../config';
 
 class Overview extends Component {
 
 
     render() {
         const dv = new DataSet().createView();
-        const status = {loading: false};
+        const state = {loading: true};
 
         const freshData = () => function () {
             console.log('click');
             axios
-                .get('http://127.0.0.1:8000/blive/overview')
+                .get(config.api + '/blive/overview')
                 .then(function (response) {
                     console.log(response);
                     dv.source(response.data['SignDayCount']);
                 })
+                .finally(function () {
+                    state.loading = false;
+                })
             ;
-
         };
 
         const cols = {
@@ -38,7 +41,7 @@ class Overview extends Component {
 
         return (
             <MainLayout>
-                <Spin spinning={status.loading}>
+                <Spin spinning={state.loading}>
                     <div>
                         <Chart height={400} data={dv} scale={cols} width={600}>
                             <Axis name="日期"/>

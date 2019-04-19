@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import NotMatch from './pages/404';
-import Test from './pages/Test';
+import About from './pages/About';
 import Overview from "./pages/Overview";
 import Signday from "./pages/Signday";
-import Signuser from "./pages/Signuser";
+import Signrank from "./pages/Signrank";
 import Live from "./pages/Live";
+import User from './pages/User';
 
 class App extends Component {
     render() {
@@ -16,9 +17,10 @@ class App extends Component {
                     <Route exact path="/" component={Overview}/>
                     {/* Other Routes */}
                     <Route exact path="/day" component={Signday}/>
-                    <Route exact path="/user" component={Signuser}/>
+                    <Route exact path="/rank" component={Signrank}/>
                     <Route exact path="/live" component={Live}/>
-                    <Route exact path="/test" component={Test}/>
+                    <Route exact path="/user" component={User}/>
+                    <Route exact path="/about" component={About}/>
                     {/* NotMatch Routes */}
                     <Route component={NotMatch}/>
                 </Switch>
