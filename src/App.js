@@ -7,6 +7,8 @@ import Signday from "./pages/Signday";
 import Signrank from "./pages/Signrank";
 import Live from "./pages/Live";
 import User from './pages/User';
+import DanmuLog from "./pages/Danmu";
+import GiftLog from "./pages/Gift";
 
 class App extends Component {
     render() {
@@ -20,7 +22,10 @@ class App extends Component {
                     <Route exact path="/rank" component={Signrank}/>
                     <Route exact path="/live" component={Live}/>
                     <Route exact path="/user" component={User}/>
+                    <Route exact path="/danmu" component={DanmuLog}/>
+                    <Route exact path="/gift" component={GiftLog}/>
                     <Route exact path="/about" component={About}/>
+
                     {/* NotMatch Routes */}
                     <Route component={NotMatch}/>
                 </Switch>

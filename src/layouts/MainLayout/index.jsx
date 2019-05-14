@@ -15,6 +15,7 @@ class MainLayout extends Component {
         error: false,
     };
 
+    /*这是个啥?*/
     freshData = () => function () {
         this.setState({error: true});
         console.log('666');
@@ -53,6 +54,16 @@ class MainLayout extends Component {
                             <Link to={{pathname: '/user'}}/>
                             <Icon type="save"/>
                             <span className="nav-text">打卡日志</span>
+                        </Menu.Item>
+                        <Menu.Item key="/danmu">
+                            <Link to={{pathname: '/danmu'}}/>
+                            <Icon type="save"/>
+                            <span className="nav-text">弹幕日志</span>
+                        </Menu.Item>
+                        <Menu.Item key="/gift">
+                            <Link to={{pathname: '/gift'}}/>
+                            <Icon type="save"/>
+                            <span className="nav-text">礼物日志</span>
                         </Menu.Item>
                         <Menu.Item key="/live">
                             <Link to={{pathname: '/live'}}/>
