@@ -57,18 +57,23 @@ class MainLayout extends Component {
                         </Menu.Item>
                         <Menu.Item key="/danmu">
                             <Link to={{pathname: '/danmu'}}/>
-                            <Icon type="save"/>
+                            <Icon type="menu-unfold"/>
                             <span className="nav-text">弹幕日志</span>
                         </Menu.Item>
                         <Menu.Item key="/gift">
                             <Link to={{pathname: '/gift'}}/>
-                            <Icon type="save"/>
+                            <Icon type="apple"/>
                             <span className="nav-text">礼物日志</span>
                         </Menu.Item>
                         <Menu.Item key="/live">
                             <Link to={{pathname: '/live'}}/>
                             <Icon type="star"/>
                             <span className="nav-text">直播间</span>
+                        </Menu.Item>
+                        <Menu.Item key="/music">
+                            <Link to={{pathname: '/music'}}/>
+                            <Icon type="play-circle"/>
+                            <span className="nav-text">点歌机</span>
                         </Menu.Item>
                         <Menu.Item key="/about">
                             <Link to={{pathname: '/about'}}/>

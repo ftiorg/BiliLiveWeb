@@ -9,6 +9,7 @@ import Live from "./pages/Live";
 import User from './pages/User';
 import DanmuLog from "./pages/Danmu";
 import GiftLog from "./pages/Gift";
+import Music from "./pages/Music";
 
 class App extends Component {
     render() {
@@ -25,7 +26,7 @@ class App extends Component {
                     <Route exact path="/danmu" component={DanmuLog}/>
                     <Route exact path="/gift" component={GiftLog}/>
                     <Route exact path="/about" component={About}/>
-
+                    <Route exact path="/music" component={Music}/>
                     {/* NotMatch Routes */}
                     <Route component={NotMatch}/>
                 </Switch>
